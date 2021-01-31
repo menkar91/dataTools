@@ -6,6 +6,7 @@ create or alter procedure sp_generateInsert (
 as
 /* 
 Date: 2021-01-30
+Author: @menkar91
 Note: Genera un listado de resultados listo para insertar
 Parameter:
 - @mode: values: genera listado con values independientes

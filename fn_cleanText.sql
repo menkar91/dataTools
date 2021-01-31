@@ -6,6 +6,7 @@ returns varchar(max)
 as
 /* 
 Date: 2021-01-30
+Author: @menkar91
 Note: Limpia un texto por medio de una expresión regular
 Parameter:
 - @regex: Limpiar acentuaciones (A-ZÑ 0-9), solo números (0-9.), solo letras sin ñ y con espacios (A-Z )

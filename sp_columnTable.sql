@@ -9,6 +9,7 @@ create or alter procedure sp_columnTable (
 as
 /* 
 Date: 2021-01-30
+Author: @menkar91
 Note: Genera un listado de los campos que componen la tabla
 Parameter:
 - @numberColumn: Establece el número de columnas de forma horizontal
