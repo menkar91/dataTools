@@ -5,7 +5,8 @@ returns nvarchar(max)
 as
 /* 
 Date: 2021-01-30
-Author: 
+Author: Unknown
+Source: StackOverFlow
 Note: Limpia un texto enriquecido
 */
 begin
