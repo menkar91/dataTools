@@ -12,7 +12,7 @@ begin
     while @i <= 12
     begin
         insert into @output ([value],[month],[name])
-        values (@i, right(concat('00',@i),2), datename(month,DATEADD(month,(@i-1),'1900-01-01')))
+        values (@i, right(concat('00',@i),2), dateName(month,dateAdd(month,(@i-1),'1900-01-01')))
 
         set @i += 1
     end
