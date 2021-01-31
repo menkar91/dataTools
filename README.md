@@ -9,6 +9,7 @@ Este documento es una guía para herramientas de **sql server**.
  - **fn_months:** Genera un listado de números con la cantidad establecida
  - **fn_nRecord:** Genera un listado de números con la cantidad establecida
  - **fn_rtf:** Limpia un texto enriquecido
+ - **fn_years:** Calcula en años teniendo en cuenta los bisiesto, ejemplo: dbo.fn_years('20160229','20200228') tiene: 3 años, 11 meses, 28 días
  - **sp_columnTable:** Genera un listado de los campos que componen la tabla
  - **sp_generateInsert:** Genera un listado de resultados listo para insertar
 
