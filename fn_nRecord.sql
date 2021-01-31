@@ -11,15 +11,15 @@ Parameter:
 - @quantity: Cantidad de registros a generar
 */
 begin
-	declare @i int=1
+    declare @i int=1
 	
     while @i <= @quantity
-	begin
-		insert into @output (value)
-		values (@i)
+    begin
+        insert into @output (value)
+        values (@i)
 
-		set @i += 1
-	end
+        set @i += 1
+    end
 
-	return
+    return
 end
