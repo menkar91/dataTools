@@ -4,9 +4,7 @@ as
 /* 
 Date: 2021-01-30
 Author: @menkar91
-Note: Genera un listado de números con la cantidad establecida
-Parameter:
-- @quantity: Cantidad de registros a generar
+Note: Genera un listado de los meses con númeración y nombre
 */
 begin
     declare @i int=1
