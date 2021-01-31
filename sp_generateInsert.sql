@@ -5,18 +5,19 @@ create or alter procedure sp_generateInsert (
 )
 as
 /* 
-Fecha:		 2021-01-30
-Descripción: Genera un listado de resultados listo para insertar
-@mode:       values: genera listado con values independientes
-             valuesTotal: genera listado con values de forma mas reducida
-             select: genera listado con select para poder agregarle código como [not exists]
+Date: 2021-01-30
+Note: Genera un listado de resultados listo para insertar
+Parameter:
+- @mode: values: genera listado con values independientes
+         valuesTotal: genera listado con values de forma mas reducida
+         select: genera listado con select para poder agregarle código como [not exists]
 */
 set nocount on
 declare 
     @columns    varchar(max),
     @field      varchar(max),
     @result     varchar(max),
-    @firstField varchar(100)
+    @firstField varchar(max)
 begin
     if @filter<>'' and @filter not like '%where%'
         set @filter='where '+@filter
