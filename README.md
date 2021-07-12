@@ -11,6 +11,7 @@ Este documento es una guía para herramientas de **sql server**.
  - **fn_rtf:** Limpia un texto enriquecido
  - **fn_years:** Calcula en años teniendo en cuenta los bisiesto
  - **sp_columnTable:** Genera un listado de los campos que componen la tabla
+ - **sp_error:** Genera información del error desde un try catch
  - **sp_generateInsert:** Genera un listado de resultados listo para insertar
 
 

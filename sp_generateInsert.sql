@@ -1,7 +1,8 @@
 create or alter procedure sp_generateInsert (
     @table  varchar(max),
     @filter varchar(max)='',
-    @mode   varchar(20)='values'
+    @mode   varchar(20)='values',
+    @order  varchar(max)=''
 )
 as
 /* 
@@ -22,6 +23,9 @@ declare
 begin
     if @filter<>'' and @filter not like '%where%'
         set @filter='where '+@filter
+    
+    if @order<>'' and @order not like '%order by%'
+        set @order='order by '+@order
     
     set @mode=IIF(@mode='','values',@mode)
 
@@ -60,7 +64,7 @@ begin
     if @mode='values'
     begin
         select @field=replace(@field,'||','')
-        set @result='select ''insert into '+@table+'('+@columns+')values('''+'+'+@field+'+'+''')'''+' from '+@table+' '+@filter
+        set @result='select ''insert into '+@table+'('+@columns+')values('''+'+'+@field+'+'+''')'''+' from '+@table+' '+@filter+' '+@order
     end
     else if @mode='select'
     begin
@@ -69,7 +73,7 @@ begin
         set @result='select ''--insert into '+@table+'('+@columns+')'''+char(13)
                    +'union all select iif(row_number() over (order by '+@firstField+')=1,'''',''union all '')+''select '''+'+'+char(13)
                    +'    '+@field+char(13)
-                   +'from '+@table+' '+@filter
+                   +'from '+@table+' '+@filter+' '+@order
     end
     else if @mode='valuesTotal'
     begin
@@ -80,7 +84,7 @@ begin
                    +'union all select iif(row_number() over (order by '+@firstField+')=1,'' '','','')+''('''+'+'+char(13)
                    +'    '+@field+char(13)
                    +'+'+''')'''+char(13)
-                   +'from '+@table+' '+@filter
+                   +'from '+@table+' '+@filter+' '+@order
     end
     else
     begin
