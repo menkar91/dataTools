@@ -2,8 +2,8 @@ create or alter procedure sp_pivot (
     @input varchar(max),
     @pivot nvarchar(max)=null,
 	@funct varchar(max)=null,
-    @value varchar(max)='value',
     @name  varchar(max)='name',
+    @value varchar(max)='value',
 	@print bit=0
 )
 as
@@ -34,7 +34,8 @@ begin
 	end
 	if coalesce(@pivot,'')=''
 	begin
-		set @sql=N'select @result=stuff((select distinct concat('',['','+@name+','']'') from ('+@input+') as source for xml path('''')),1,1,'''')'
+		set @sql=N'select @result=stuff((select concat('',['','+@name+','']'') from ('+@input+') as source group by '+@name+' order by '+@name+' for xml path('''')),1,1,'''')'
+		print @sql
 		set @parameters=N'@result varchar(max) output'
 		execute sp_executesql @sql, @parameters, @result=@pivot OUTPUT
 	end
