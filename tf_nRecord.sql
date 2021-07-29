@@ -1,4 +1,4 @@
-create or alter function fn_nRecord ( 
+create or alter function tf_nRecord ( 
     @quantity int
 ) 
 returns @output table (value int)

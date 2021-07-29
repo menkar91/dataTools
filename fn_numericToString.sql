@@ -6,7 +6,7 @@ as
 /* 
 Date: 2021-07-28
 Author: @menkar91
-Note: Transforma un dato numerico a una cadena y retira los ceros a la derecha de un decimal
+Note: Transforma un dato númerico a una cadena y retira los ceros a la derecha de un decimal
 */
 begin
     declare @output varchar(max)=''

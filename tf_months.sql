@@ -1,4 +1,4 @@
-create or alter function fn_months()
+create or alter function tf_months()
 returns @output table ([value] int, [month] char(2), [name] varchar(10))
 as
 /* 
