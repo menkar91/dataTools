@@ -22,6 +22,7 @@ Este documento es una guía para herramientas de **sql server**.
  - **sp_columnTable:** Genera un listado de los campos que componen la tabla
  - **sp_error:** Genera información del error desde un try catch
  - **sp_generateInsert:** Genera un listado de resultados listo para insertar
+ - **sp_pivot:** Pivotea una consulta enviada desde un parametro
 
 
 ## Enlaces
