@@ -8,6 +8,7 @@ Este documento es una guía para herramientas de **sql server**.
  - **fn_cleanText:** Limpia un texto por medio de una expresión regular
  - **fn_months:** Genera un listado de números con la cantidad establecida
  - **fn_nRecord:** Genera un listado de números con la cantidad establecida
+ - **fn_numericToString:** Transforma un dato numerico a una cadena y retira los ceros a la derecha de un decimal
  - **fn_rtf:** Limpia un texto enriquecido
  - **fn_years:** Calcula en años teniendo en cuenta los bisiesto
  - **sp_columnTable:** Genera un listado de los campos que componen la tabla
