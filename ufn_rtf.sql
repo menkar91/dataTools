@@ -1,4 +1,4 @@
-create or alter function fn_rtf (
+create or alter function ufn_rtf (
     @rtf nvarchar(max)
 )
 returns nvarchar(max)

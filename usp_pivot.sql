@@ -1,4 +1,4 @@
-create or alter procedure sp_pivot (
+create or alter procedure usp_pivot (
     @input varchar(max),
     @pivot nvarchar(max)=null,
 	@funct varchar(max)=null,

@@ -1,4 +1,4 @@
-create or alter function fn_numericToString(
+create or alter function ufn_numericToString(
     @data sql_variant
 )
 returns varchar(max)

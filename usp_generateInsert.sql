@@ -1,4 +1,4 @@
-create or alter procedure sp_generateInsert (
+create or alter procedure usp_generateInsert (
     @table  varchar(max),
     @filter varchar(max)='',
     @mode   varchar(20)='values',

@@ -1,4 +1,4 @@
-create or alter procedure sp_columnTable (
+create or alter procedure usp_columnTable (
     @table        varchar(max),
     @numberColumn smallint=0,
     @space        tinyint=0,

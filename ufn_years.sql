@@ -1,4 +1,4 @@
-create or alter function fn_years(
+create or alter function ufn_years(
     @date1 date,
     @date2 date
 )

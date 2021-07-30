@@ -1,4 +1,4 @@
-create or alter function fn_cleanText (
+create or alter function ufn_cleanText (
     @text  varchar(max), 
     @regex varchar(max)
 )

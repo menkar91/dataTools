@@ -1,28 +1,21 @@
 # sqlTools
 
-Este documento es una guía para herramientas de **sql server**.
+Este documento es una guía para los script que aquí se encuentran como herramientas de **sql server**.
 
 
 ## Archivos
 
-### Funciones escalares:
-
- - **fn_cleanText:** Limpia un texto por medio de una expresión regular
- - **fn_numericToString:** Transforma un dato númerico a una cadena y retira los ceros a la derecha de un decimal
- - **fn_rtf:** Limpia un texto enriquecido
- - **fn_years:** Calcula en años teniendo en cuenta los bisiesto
-
-### Funciones con valores de tabla:
-
- - **tf_nRecord:** Genera un listado de números con la cantidad establecida
- - **tf_months:** Genera un listado de meses
- 
-### Procedimientos almacenados:
-
- - **sp_columnTable:** Genera un listado de los campos que componen la tabla
- - **sp_error:** Genera información del error desde un try catch
- - **sp_generateInsert:** Genera un listado de resultados listo para insertar
- - **sp_pivot:** Pivotea una consulta enviada desde un parametro
+ - **ufn_cleanText:** Limpia un texto por medio de una expresión regular
+ - **ufn_dateStyle** Transforma una fecha al estilo elegido
+ - **ufn_months:** Genera un listado de meses
+ - **ufn_nRecord:** Genera un listado de números con la cantidad establecida
+ - **ufn_numericToString:** Transforma un dato númerico a una cadena y retira los ceros a la derecha de un decimal
+ - **ufn_rtf:** Limpia un texto enriquecido
+ - **ufn_years:** Calcula en años teniendo en cuenta los bisiesto
+ - **usp_columnTable:** Genera un listado de los campos que componen la tabla
+ - **usp_error:** Genera información del error desde un try catch
+ - **usp_generateInsert:** Genera un listado de resultados listo para insertar
+ - **usp_pivot:** Pivotea una consulta enviada desde un parametro
 
 
 ## Enlaces

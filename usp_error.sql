@@ -1,4 +1,4 @@
-create or alter procedure sp_error
+create or alter procedure usp_error
 as
 /* 
 Date: 2021-07-11
