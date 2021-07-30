@@ -35,7 +35,6 @@ begin
 	if coalesce(@pivot,'')=''
 	begin
 		set @sql=N'select @result=stuff((select concat('',['','+@name+','']'') from ('+@input+') as source group by '+@name+' order by '+@name+' for xml path('''')),1,1,'''')'
-		print @sql
 		set @parameters=N'@result varchar(max) output'
 		execute sp_executesql @sql, @parameters, @result=@pivot OUTPUT
 	end

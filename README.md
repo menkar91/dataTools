@@ -15,7 +15,7 @@ Este documento es una guía para herramientas de **sql server**.
 ### Funciones con valores de tabla:
 
  - **tf_nRecord:** Genera un listado de números con la cantidad establecida
- - **tf_months:** Genera un listado de números con la cantidad establecida
+ - **tf_months:** Genera un listado de meses
  
 ### Procedimientos almacenados:
 
