@@ -11,6 +11,7 @@ create table dbo.usuario (
     segundoNombre     varchar(30),
     primerApellido    varchar(30),
     segundoApellido   varchar(30),
+    nombre            as concat_ws(' ',primerNombre,segundoNombre,primerApellido,segundoApellido),
     fechaNacimiento   date,
     fechaCambio       datetime,               --> permite saber la ultima actualizacion del usuario
     imagen            varchar(255),           --> imagen de perfil

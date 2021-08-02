@@ -31,6 +31,7 @@ begin
 	if @format='yyyy-mm-dd hh:mi:ss.mmm'  set @p=21
 	if @format='mm/dd/yy hh:mi:ss'		  set @p=22
 	if @format='yyyy-mm-dd'               set @p=23
+	if @format='hh-mi-ss'                 set @p=24
 	if @format='mm/dd/yyyy'               set @p=101
 	if @format='yyyy.mm.dd'               set @p=102
 	if @format='dd/mm/yyyy'               set @p=103
@@ -38,13 +39,11 @@ begin
 	if @format='dd-mm-yyyy'               set @p=105
 	if @format='dd mon yyyy'              set @p=106
 	if @format='Mon dd, yyyy'             set @p=107
-	if @format='hh:mi:ss'                 set @p=108
 	if @format='mm-dd-yyyy'               set @p=110
 	if @format='yyyy/mm/dd'               set @p=111
 	if @format='yyyymmdd'                 set @p=112
 	if @format='yyyy-mm-ddThh:mi:ss.mmm'  set @p=126
 	if @format='yyyy-MM-ddThh:mm:ss.fffZ' set @p=127
-	if @format='dd mon yyyy hh:mi:ss:mmm' set @p=130
 	if @format='dd/mm/yyyy hh:mi:ss:mmm'  set @p=131
 
 	set @output=convert(varchar,@input,@p)
