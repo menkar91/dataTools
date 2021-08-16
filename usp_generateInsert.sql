@@ -50,7 +50,7 @@ begin
                 when t.name in ('image','text') then '''null'''
                 when t.precision!=0 and (t.name not like '%date%' and t.name not like '%time%') then 'convert(varchar('+convert(varchar(10),iif(c.precision>=4,c.precision,4))+'),'+c.name+')'
                 --Revisar cuando son bit y tienen null solo toma la primera letra, osea n en vez de null
-                else 'quoteName('+c.name+','+quoteName('''','''''')+')'
+                else '''''''''+'+c.name+'+'''''''''
             end)
             +','+'''null'''+')'
          from sys.columns as c
