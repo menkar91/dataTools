@@ -1,6 +1,7 @@
 create or alter procedure usp_codeGenerator(
     @length int,
-    @regex varchar(max)=null
+    @regex varchar(max)=null,
+    @output varchar(max) output
 )
 as
 /* 
@@ -16,7 +17,6 @@ set nocount on
 begin
     declare 
         @special varchar(max)='[]%',
-        @output varchar(max)='',
         @char char(1)='',
         @from smallint=33,
         @to smallint=94
@@ -56,6 +56,4 @@ begin
             set @length-=1
         end
     end
-
-    select @output
 end
