@@ -22,8 +22,8 @@ create table dbo.usuario (
 alter table usuario add constraint pk_usuario primary key clustered (usuario_id)
 alter table usuario add constraint uq_usuario_userName unique (userName)
 alter table usuario add constraint fk_usuario_grupo foreign key (grupo_id) references grupo (grupo_id) on delete no action
-alter table usuario add constraint ck_fechaNacimiento check(fechaNacimiento>=dateAdd(year,-18,getDate()))
---alter table usuario [with nocheck] add constraint ck_fechaNacimiento check(fechaNacimiento>=dateAdd(year,-18,getDate()))
+alter table usuario add constraint ck_fechaNacimiento check(fechaNacimiento<=dateAdd(year,-18,getDate()))
+--alter table usuario [with nocheck] add constraint ck_fechaNacimiento check(fechaNacimiento<=dateAdd(year,-18,getDate()))
 --alter table usuario [check|nocheck] constraint ck_fechaNacimiento
 alter table usuario add constraint df_usuario_fecha default (getDate()) for fecha
 alter table usuario add constraint df_usuario_fechaCambio default (getDate()) for fechaCambio

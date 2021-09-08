@@ -12,6 +12,7 @@ Este documento es una guía para los script que aquí se encuentran como herrami
  - **ufn_numericToString:** Transforma un dato númerico a una cadena y retira los ceros a la derecha de un decimal
  - **ufn_rtf:** Limpia un texto enriquecido
  - **ufn_years:** Calcula en años teniendo en cuenta los bisiesto
+ - **usp_codeGenerator:** Genera un código mediante una expresión regular
  - **usp_columnTable:** Genera un listado de los campos que componen la tabla
  - **usp_error:** Genera información del error desde un try catch
  - **usp_generateInsert:** Genera un listado de resultados listo para insertar
