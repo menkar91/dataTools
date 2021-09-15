@@ -3,7 +3,8 @@ create or alter procedure usp_generateInsert (
     @mode   varchar(20)='values',
     @select varchar(max)='',
     @where  varchar(max)='',
-    @order  varchar(max)=''
+    @order  varchar(max)='',
+    @top    int=0
 )
 as
 /* 
@@ -52,10 +53,14 @@ begin
     set @field=stuff((
          select '+'','''+'+||isnull('+
             (case 
-                when t.name in ('image','text') then '''null'''
-                when t.precision!=0 and (t.name not like '%date%' and t.name not like '%time%') then 'convert(varchar('+convert(varchar(10),iif(c.precision>=4,c.precision,4))+'),'+c.name+')'
-                when t.name like '%date%' and t.name like '%time%' then '''''''''+replace(convert(varchar,'+c.name+','+(case t.name when 'date' then '112' when 'time' then '24' else '21' end)+'),''-'','''')+'''''''''
-                --Revisar cuando son bit y tienen null solo toma la primera letra, osea n en vez de null
+                when t.name in ('image','varbinary','binary') 
+                    then '''null'''
+                when t.name in ('xml','text','ntext','uniqueidentifier','sql_variant','geometry','geography') 
+                    then '''''''''+convert(varchar(max),'+c.name+')+'''''''''
+                when t.precision!=0 and (t.name not like '%date%' and t.name not like '%time%') 
+                    then 'convert(varchar('+convert(varchar(10),iif(c.precision>=4,c.precision,4))+'),'+c.name+')'
+                when t.name like '%date%' or t.name like '%time%' 
+                    then '''''''''+replace(convert(varchar,'+c.name+','+(case t.name when 'date' then '112' when 'time' then '24' else '21' end)+'),''-'','''')+'''''''''
                 else '''''''''+'+c.name+'+'''''''''
             end)
             +','+'''null'''+')'
@@ -71,14 +76,14 @@ begin
     if @mode='values'
     begin
         select @field=replace(@field,'||','')
-        set @result='select ''insert into '+@table+'('+@columns+')values('''+'+'+@field+'+'+''')'''+' from '+@table+' '+@where+' '+@order
+        set @result='select'+iif(@top>0,concat(' top ',@top),'')+' ''insert into '+@table+'('+@columns+')values('''+'+'+@field+'+'+''')'''+' from '+@table+' '+@where+' '+@order
     end
     else if @mode='select'
     begin
         select @field=replace(@field,'||',char(13)+'    ')
 
         set @result='select ''--insert into '+@table+'('+@columns+')'''+char(13)
-                   +'union all select iif(row_number() over (order by '+@firstField+')=1,'''',''union all '')+''select '''+'+'+char(13)
+                   +'union all select'+iif(@top>0,concat(' top ',@top),'')+' iif(row_number() over (order by '+@firstField+')=1,'''',''union all '')+''select '''+'+'+char(13)
                    +'    '+@field+char(13)
                    +'from '+@table+' '+@where+' '+@order
     end
@@ -88,7 +93,7 @@ begin
 
         set @result='select ''insert into '+@table+'('+@columns+')'''+char(13)
                    +'union all select ''values'''+char(13)
-                   +'union all select iif(row_number() over (order by '+@firstField+')=1,'' '','','')+''('''+'+'+char(13)
+                   +'union all select'+iif(@top>0,concat(' top ',@top),'')+' iif(row_number() over (order by '+@firstField+')=1,'' '','','')+''('''+'+'+char(13)
                    +'    '+@field+char(13)
                    +'+'+''')'''+char(13)
                    +'from '+@table+' '+@where+' '+@order
