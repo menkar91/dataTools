@@ -49,19 +49,25 @@ begin
             and 1=iif(coalesce(@select,'')='',1,iif((select count(1) from string_split(@select,',') a where a.value=name)=0,0,1))
         for xml path('')
     ),1,1,'')
-
+    
+    if @columns is null
+    begin
+        raiserror('La tabla no existe',11,1)
+        return
+    end
+    
     set @field=stuff((
          select '+'','''+'+||isnull('+
             (case 
                 when t.name in ('image','varbinary','binary') 
                     then '''null'''
                 when t.name in ('xml','text','ntext','uniqueidentifier','sql_variant','geometry','geography') 
-                    then '''''''''+convert(varchar(max),'+c.name+')+'''''''''
+                    then '''''''''+convert(varchar(max),['+c.name+'])+'''''''''
                 when t.precision!=0 and (t.name not like '%date%' and t.name not like '%time%') 
-                    then 'convert(varchar('+convert(varchar(10),iif(c.precision>=4,c.precision,4))+'),'+c.name+')'
+                    then 'convert(varchar('+convert(varchar(10),iif(c.precision>=4,c.precision,4))+'),['+c.name+'])'
                 when t.name like '%date%' or t.name like '%time%' 
-                    then '''''''''+replace(convert(varchar,'+c.name+','+(case t.name when 'date' then '112' when 'time' then '24' else '21' end)+'),''-'','''')+'''''''''
-                else '''''''''+'+c.name+'+'''''''''
+                    then '''''''''+replace(convert(varchar,['+c.name+'],'+(case t.name when 'date' then '112' when 'time' then '24' else '21' end)+'),''-'','''')+'''''''''
+                else '''''''''+['+c.name+']+'''''''''
             end)
             +','+'''null'''+')'
          from sys.columns as c
