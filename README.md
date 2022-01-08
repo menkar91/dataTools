@@ -5,7 +5,7 @@ Este documento es una guía para los script que aquí se encuentran como herrami
 
 ## Archivos
 
- - **ufn_cleanText:[a relative link](sqlTools/blob/main/ufn_cleanText.sql)** Limpia un texto por medio de una expresión regular
+ - **[ufn_cleanText:](ufn_cleanText.sql)** Limpia un texto por medio de una expresión regular
  - **ufn_dateStyle** Transforma una fecha al estilo elegido
  - **ufn_months:** Genera un listado de meses
  - **ufn_nRecord:** Genera un listado de números con la cantidad establecida
