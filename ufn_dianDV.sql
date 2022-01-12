@@ -1,4 +1,4 @@
-create or alter function ufn_DianDV (
+create or alter function ufn_dianDV (
     @input varchar(11)
 )
 returns varchar(max)
@@ -6,9 +6,9 @@ as
 /* 
 Date: 2022-01-12
 Author: @menkar91
-Note: Calcula el digito de verificación por medio de formula dada por la DIAN
+Note: Calcula el digito de verificaciÃ³n por medio de formula dada por la DIAN
 Parameter:
-- @input: NIT o Cedula de ciudadania sin puntos ni otros caracteres que no sean números
+- @input: NIT o Cedula de ciudadania sin puntos ni otros caracteres que no sean nÃºmeros
 */
 begin
     declare 
