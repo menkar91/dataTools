@@ -7,6 +7,7 @@ Este documento es una guía para los script que aquí se encuentran como herrami
 
  - **[ufn_cleanText:](ufn_cleanText.sql)** Limpia un texto por medio de una expresión regular
  - **[ufn_dateStyle:](ufn_dateStyle.sql)** Transforma una fecha al estilo elegido
+ - **[ufn_DianDV:](ufn_DianDV.sql)** Calcula el digito de verificación por medio de formula dada por la DIAN
  - **[ufn_months:](ufn_months.sql)** Genera un listado de meses
  - **[ufn_nRecord:](ufn_nRecord.sql)** Genera un listado de números con la cantidad establecida
  - **[ufn_numericToString:](ufn_numericToString.sql)** Transforma un dato númerico a una cadena y retira los ceros a la derecha de un decimal
