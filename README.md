@@ -5,10 +5,10 @@ Este documento es una guía para los script que aquí se encuentran como herrami
 
 ## Archivos
 
- - **[ufn_amountToLetter_ES:](ufn_amountToLetter_ES.sql)** Transforma un cantidad o monto a letra en español
  - **[ufn_amountToLetter_EN:](ufn_amountToLetter_EN.sql)** Transforma un cantidad o monto a letra en ingles
- - **[ufn_columnPosition:](ufn_columnPosition.sql)** Devuelve la posición en letra de un número (A-Z). Conocer la columna en hojas de calculo
+ - **[ufn_amountToLetter_ES:](ufn_amountToLetter_ES.sql)** Transforma un cantidad o monto a letra en español
  - **[ufn_cleanText:](ufn_cleanText.sql)** Limpia un texto por medio de una expresión regular
+ - **[ufn_columnPosition:](ufn_columnPosition.sql)** Devuelve la posición en letra de un número (A-Z). Conocer la columna en hojas de calculo
  - **[ufn_dateRange:](ufn_dateRange.sql)** Genera un listado de fechas
  - **[ufn_dateStyle:](ufn_dateStyle.sql)** Transforma una fecha al estilo elegido
  - **[ufn_dianDV:](ufn_dianDV.sql)** Calcula el digito de verificación por medio de formula dada por la DIAN
