@@ -16,6 +16,7 @@ Este documento es una guía para los script que aquí se encuentran como herrami
  - **[ufn_nRecord:](ufn_nRecord.sql)** Genera un listado de números con la cantidad establecida
  - **[ufn_numericToString:](ufn_numericToString.sql)** Transforma un dato númerico a una cadena y retira los ceros a la derecha de un decimal
  - **[ufn_rtf:](ufn_rtf.sql)** Limpia un texto enriquecido
+ - **[ufn_split:](ufn_split.sql)** Divide una cadena en filas de subcadenas, según un carácter separador especificado
  - **[ufn_years:](ufn_years.sql)** Calcula en años teniendo en cuenta los bisiesto
  - **[usp_codeGenerator:](usp_codeGenerator.sql)** Genera un código mediante una expresión regular
  - **[usp_columnTable:](usp_columnTable.sql)** Genera un listado de los campos que componen la tabla
