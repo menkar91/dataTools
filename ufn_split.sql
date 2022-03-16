@@ -1,13 +1,13 @@
-create function ufn_split(@string varchar(max), @separator varchar(1))
+create or alter function ufn_split(@string varchar(max), @separator varchar(1))
 returns @output table ([value] nVarchar(max))
 as
 /* 
 Date: 2022-03-16
 Author: @menkar91
-Note: Divide una cadena en filas de subcadenas, según un carácter separador especificado
+Note: Divide una cadena en filas de subcadenas, segÃºn un carÃ¡cter separador especificado
 Parameter:
 - @string: Cadena que se requiere dividir en filas
-- @separator: Caracter que funcionará como delimitador para crear las filas
+- @separator: Caracter que funcionarÃ¡ como delimitador para crear las filas
 Examples:
     select * from ufn_split('1,2,3,4,5,6,7,8,9,10',',')
 */
