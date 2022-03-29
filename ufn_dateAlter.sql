@@ -7,27 +7,27 @@ as
 /* 
 Date: 2022-03-29
 Author: @menkar91
-Note: Permite alterar para colocar el día exacto y poder añadir o quitar meses y/o años. De gran utilidad cuando se requiere sacar el último día del mes
+Note: Permite alterar para colocar el dÃ­a exacto y poder aÃ±adir o quitar meses y/o aÃ±os. De gran utilidad cuando se requiere sacar el Ãºltimo dÃ­a del mes
 Parameter:
-- @input: Fecha la cuál se quiere modificar
-- @alter: Alteración que se quiere aplicar a la fecha, estas se componen de los siguientes caracteres:
-    númerico: define el día a establecer en la fecha. 
-        NOTA1: si este valor es superior al día máximo del mes entonces asignará el último día del mes, ejemplo: 31 en Febrero me devolverá 28 o 29 de febrero
-        NOTA2: si este valor es cero (0) o se omitió, entonces se devolverá el mismo día recibido
-    simbolos aritméticos: agregará o restará n cantidad dependiendo de las veces que se definan, estos se pueden combinar o utilizar en cualquier posición
+- @input: Fecha la cuÃ¡l se quiere modificar
+- @alter: AlteraciÃ³n que se quiere aplicar a la fecha, estas se componen de los siguientes caracteres:
+    nÃºmerico: define el dÃ­a a establecer en la fecha. 
+        NOTA1: si este valor es superior al dÃ­a mÃ¡ximo del mes entonces asignarÃ¡ el Ãºltimo dÃ­a del mes, ejemplo: 31 en Febrero me devolverÃ¡ 28 o 29 de febrero
+        NOTA2: si este valor es cero (0) o se omitiÃ³, entonces se devolverÃ¡ el mismo dÃ­a recibido
+    simbolos aritmÃ©ticos: agregarÃ¡ o restarÃ¡ n cantidad dependiendo de las veces que se definan, estos se pueden combinar o utilizar en cualquier posiciÃ³n
         + -> adiciona meses
         - -> resta meses
-        * -> adiciona años
-        / -> resta años
+        * -> adiciona aÃ±os
+        / -> resta aÃ±os
 Examples:
-    select dbo.ufn_dateAlter('2022-03-29','1'  ) --> Primer día del mes
-    select dbo.ufn_dateAlter('2022-03-29','99' ) --> Último día del mes
-    select dbo.ufn_dateAlter('2022-03-29','+1' ) --> Primer día del mes posterior
-    select dbo.ufn_dateAlter('2022-03-29','-99') --> Último día del mes anterior
-    select dbo.ufn_dateAlter('2022-03-29','*1' ) --> Primer día del mes del año posterior
-    select dbo.ufn_dateAlter('2022-03-29','/99') --> Último día del mes del año anterior
+    select dbo.ufn_dateAlter('2022-03-29','1'  ) --> Primer dÃ­a del mes
+    select dbo.ufn_dateAlter('2022-03-29','99' ) --> Ãšltimo dÃ­a del mes
+    select dbo.ufn_dateAlter('2022-03-29','+1' ) --> Primer dÃ­a del mes posterior
+    select dbo.ufn_dateAlter('2022-03-29','-99') --> Ãšltimo dÃ­a del mes anterior
+    select dbo.ufn_dateAlter('2022-03-29','*1' ) --> Primer dÃ­a del mes del aÃ±o posterior
+    select dbo.ufn_dateAlter('2022-03-29','/99') --> Ãšltimo dÃ­a del mes del aÃ±o anterior
     select dbo.ufn_dateAlter('2022-03-29','---') --> Fecha con tres meses anterior
-    select dbo.ufn_dateAlter('2022-03-29','15' ) --> 15 del mes y año enviado
+    select dbo.ufn_dateAlter('2022-03-29','15' ) --> 15 del mes y aÃ±o enviado
 */
 begin
     declare @output date
@@ -50,6 +50,9 @@ begin
     set @alter=replace(replace(replace(replace(@alter,'-',''),'+',''),'/',''),'*','')
     set @output=@input
 
+    if isNull(@alter,'')=''
+        set @alter='0'
+
     if isnumeric(@alter)=0
         return @output
 
@@ -59,7 +62,7 @@ begin
     if @year<>0
         set @output=dateAdd(year,@year,@output)
 
-    if isNull(@alter,'')='' or @alter='0'
+    if @alter='0'
         return @output
 
     set @output=dateAdd(day,-(day(@output)-1),@output)
