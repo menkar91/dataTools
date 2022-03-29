@@ -10,6 +10,7 @@ Este documento es una guía para los script que aquí se encuentran como herrami
  - **[ufn_capitalize:](ufn_capitalize.sql)** Capitaliza un texto (la primera letra de cada palabra la coloca en mayuscula y el resto en minuscula)
  - **[ufn_cleanText:](ufn_cleanText.sql)** Limpia un texto por medio de una expresión regular
  - **[ufn_columnPosition:](ufn_columnPosition.sql)** Devuelve la posición en letra de un número (A-Z). Conocer la columna en hojas de calculo
+ - **[ufn_dateAlter:](ufn_dateAlter.sql)** Permite alterar para colocar el día exacto y poder añadir o quitar meses y/o años. De gran utilidad cuando se requiere sacar el último día del mes
  - **[ufn_dateRange:](ufn_dateRange.sql)** Genera un listado de fechas
  - **[ufn_dateStyle:](ufn_dateStyle.sql)** Transforma una fecha al estilo elegido
  - **[ufn_dianDV:](ufn_dianDV.sql)** Calcula el digito de verificación por medio de formula dada por la DIAN
