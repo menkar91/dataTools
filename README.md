@@ -3,7 +3,7 @@
 Este documento es una guía para los script que aquí se encuentran como herramientas de **sql server**.
 
 
-## Archivos
+## SQL Server
 
  - **[ufn_amountToLetter_EN:](ufn_amountToLetter_EN.sql)** Transforma un cantidad o monto a letra en ingles
  - **[ufn_amountToLetter_ES:](ufn_amountToLetter_ES.sql)** Transforma un cantidad o monto a letra en español
@@ -25,9 +25,15 @@ Este documento es una guía para los script que aquí se encuentran como herrami
  - **[usp_error:](usp_error.sql)** Genera información del error desde un try catch
  - **[usp_generateInsert:](usp_generateInsert.sql)** Genera un listado de resultados listo para insertar
  - **[usp_pivot:](usp_pivot.sql)** Pivotea una consulta enviada desde un parametro
-
-
-## Enlaces
-
  - **sp_Blitz:** [Free SQL Server Health Check Script by Brent Ozar](https://www.brentozar.com/blitz/)
  - **sp_whoIsActive** [SQL Server Monitoring Stored Procedure by Adam Machanic](http://whoisactive.com/)
+
+
+## AppScript
+
+ - **[CONCAT_WS:](CONCAT_WS.js)** Recibe un separador y un arreglo donde concatenará cada columna de cada fila y separandola por el primer parametro. (Basado en SQL Server)
+
+
+## Power Query
+
+ - **[Dim_Calendar:](Dim_Calendar.pq)** Dimensión de calendario
