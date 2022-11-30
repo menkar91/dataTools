@@ -3,7 +3,7 @@
 Este documento es una guía para los script que aquí se encuentran como herramientas de datos.
 
 
-## SQL Server
+## SQL Server ![SQL Server](https://i.imgur.com/NQ2eQjR.png)
 
  - **[ufn_amountToLetter_EN:](SQL%20Server/Scalar%20Functions/ufn_amountToLetter_EN.sql)** Transforma un cantidad o monto a letra en ingles
  - **[ufn_amountToLetter_ES:](SQL%20Server/Scalar%20Functions/ufn_amountToLetter_ES.sql)** Transforma un cantidad o monto a letra en español
@@ -29,11 +29,16 @@ Este documento es una guía para los script que aquí se encuentran como herrami
  - **sp_whoIsActive** [SQL Server Monitoring Stored Procedure by Adam Machanic](http://whoisactive.com/)
 
 
-## AppScript
+## SAP Hana ![SAP Hana](https://i.imgur.com/oUnQ4km.png)
+
+ - **[ufn_amountToLetter_EN:](SAP%20Hana/Scalar%20Functions/ufn_amountToLetter_EN.sql)** Transforma un cantidad o monto a letra en ingles
+
+
+## AppScript ![App Script](https://i.imgur.com/zdtSQSa.png)
 
  - **[CONCAT_WS:](AppScript/CONCAT_WS.js)** Recibe un separador y un arreglo donde concatenará cada columna de cada fila y separandola por el primer parametro. (Basado en SQL Server)
 
 
-## Power Query
+## Power Query ![Power Query](https://i.imgur.com/1XmeS9k.png)
 
  - **[Dim_Calendar:](Power%20Query/Dim_Calendar.pq)** Dimensión de calendario
