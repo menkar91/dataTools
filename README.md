@@ -25,8 +25,8 @@ Este documento es una guía para los script que aquí se encuentran como herrami
  - **[usp_error:](SQL%20Server/Stored%20Procedure/usp_error.sql)** Genera información del error desde un try catch
  - **[usp_generateInsert:](SQL%20Server/Stored%20Procedure/usp_generateInsert.sql)** Genera un listado de resultados listo para insertar
  - **[usp_pivot:](SQL%20Server/Stored%20Procedure/usp_pivot.sql)** Pivotea una consulta enviada desde un parametro
- - **sp_Blitz:** [Free SQL Server Health Check Script by Brent Ozar](https://www.brentozar.com/blitz/)
- - **sp_whoIsActive** [SQL Server Monitoring Stored Procedure by Adam Machanic](http://whoisactive.com/)
+ - **[sp_Blitz:](https://www.brentozar.com/blitz/)** Free SQL Server Health Check Script by Brent Ozar
+ - **[sp_whoIsActive:](http://whoisactive.com/)** SQL Server Monitoring Stored Procedure by Adam Machanic
 
 
 ## SAP Hana ![SAP Hana](https://i.imgur.com/oUnQ4km.png)
