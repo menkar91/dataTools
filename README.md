@@ -33,6 +33,7 @@ Este documento es una guía para los script que aquí se encuentran como herrami
 
  - **[ufn_amountToLetter_EN:](SAP%20Hana/Scalar%20Functions/ufn_amountToLetter_EN.sql)** Transforma un cantidad o monto a letra en ingles
  - **[ufn_amountToLetter_ES:](SAP%20Hana/Scalar%20Functions/ufn_amountToLetter_ES.sql)** Transforma un cantidad o monto a letra en español
+ - **[ufn_months:](SAP%20Hana/Table-Valued%20Function/ufn_months.sql)** Genera un listado de meses
  - **[ufn_nRecord:](SAP%20Hana/Table-Valued%20Function/ufn_nRecord.sql)** Genera un listado de números con la cantidad establecida
  - **[ufn_split:](SAP%20Hana/Table-Valued%20Function/ufn_split.sql)** Divide una cadena en filas de subcadenas según un carácter separador especificado ó divide una cadena por filas de un caracter si no se usa separador
 
