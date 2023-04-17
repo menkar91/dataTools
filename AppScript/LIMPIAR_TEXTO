@@ -1,0 +1,27 @@
+/**
+ * Limpia el texto para homologarlo con listado maestro
+ */
+function LIMPIAR_TEXTO(texto, conectores){
+  texto = texto
+    .toUpperCase()
+    .normalize('NFD')
+    .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi,'$1$2')
+    .replace(/[,/-]/gi,'.')
+    .replace(/\*/gi,'X')
+  ;
+
+  if (conectores == 1){
+    texto = texto
+      .replace(/N°|ª|°/gi,'')
+      .replace(/AS /gi,'A ')
+      .replace(/ES |IS |OS |US | NO.| X | DE | PARA | POR | CON | TALLA |#|\(|\)/gi,' ')
+      .replaceAll(' . ',' ')
+      .replaceAll('UNIDAD', '')
+      .replace(/\s\s+/g, ' ')
+      .trim()
+      .normalize()
+    ;
+  }
+
+  return texto
+}
