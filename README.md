@@ -42,6 +42,7 @@ Este documento es una guía para los script que aquí se encuentran como herrami
 
  - **[CONCAT_WS:](AppScript/CONCAT_WS.js)** Recibe un separador y un arreglo donde concatenará cada columna de cada fila y separandola por el primer parametro. (Basado en SQL Server)
  - **[BUSCAR:](AppScript/BUSCAR.js)** Esta función permite buscar un valor e una hoja especifica
+ - **[LIMPIAR_TEXTO:](AppScript/LIMPIAR_TEXTO.js)** Limpia el texto para homologarlo con listado maestro
 
 
 ## Power Query ![Power Query](https://i.imgur.com/1XmeS9k.png)
